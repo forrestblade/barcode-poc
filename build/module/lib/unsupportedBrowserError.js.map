@@ -1,0 +1,1 @@
+{"version":3,"file":"unsupportedBrowserError.js","sourceRoot":"","sources":["../../../src/lib/unsupportedBrowserError.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,WAAW,EAAE,MAAM,eAAe,CAAC;AAE5C;;GAEG;AACH,MAAM,OAAO,uBAAwB,SAAQ,WAAW;IAGtD,uBAAuB;IACvB,YAAY,oBAA0C;QACpD,KAAK,CAAC;YACJ,IAAI,EAAE,yBAAyB;YAC/B,OAAO,EAAE,yFAAyF;YAClG,IAAI,EAAE,oBAAoB;SAC3B,CAAC,CAAC;IACL,CAAC;CACF"}

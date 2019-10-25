@@ -1,0 +1,4 @@
+/**
+ * SymbologySettings tests
+ */
+export {};

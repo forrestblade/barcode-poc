@@ -1,0 +1,4 @@
+/**
+ * Index tests
+ */
+export {};

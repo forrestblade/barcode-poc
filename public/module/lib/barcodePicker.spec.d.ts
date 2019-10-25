@@ -1,0 +1,4 @@
+/**
+ * BarcodePicker tests
+ */
+export {};
