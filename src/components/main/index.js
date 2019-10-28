@@ -11,7 +11,7 @@ const Main = (props) => {
     showScan(!scan)
     code.barcodes && code.barcodes.map(barcode => {
       if (barcode.symbology === 'pdf417') {
-        document.getElementById("scandit-barcode-result").innerHTML = Barcode.Symbology.toHumanizedName(barcode.symbology) + ": " + JSON.stringify(barcode) + "<br>";
+        document.getElementById("scandit-barcode-result").innerHTML = Barcode.Symbology.toHumanizedName(barcode.symbology) + ": " + JSON.stringify(barcode.data) + "<br>";
       }
     })
   }
