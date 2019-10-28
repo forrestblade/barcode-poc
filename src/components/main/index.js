@@ -11,7 +11,7 @@ const Main = (props) => {
     showScan(!scan)
     code.barcodes && code.barcodes.map(barcode => {
       if (barcode.symbology === 'pdf417') {
-        const data = barcode.data.split(' ')
+        const data = barcode.data.split('\n')
 
         document.getElementById("scandit-barcode-result").innerHTML = data[10];
       }
