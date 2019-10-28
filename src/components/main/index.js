@@ -7,13 +7,12 @@ const Main = (props) => {
   const [scan, showScan] = useState(false)
 
   function scanBarcode() {
-    showScan(true)
+    showScan(!scan)
   }
   return (
     <React.Fragment>
       {scan ?
         <main className='scandit'>
-          <div id="scandit-barcode-result" className="result-text"></div>
           <BarcodePicker
             playSoundOnScan={true}
             vibrateOnScan={true}
@@ -24,10 +23,9 @@ const Main = (props) => {
               })
             }
             onScan={scanResult => {
-              document.getElementById("scandit-barcode-result").innerHTML = scanResult.barcodes.reduce(function (
-                string,
-                barcode
-              ) {
+              scanBarcode()
+              document.getElementById("scandit-barcode-result").innerHTML = 
+              scanResult.barcodes.reduce(function (string,barcode) {
                 return string + Barcode.Symbology.toHumanizedName(barcode.symbology) + ": " + barcode.data + "<br>";
               },
                 "");
@@ -38,7 +36,7 @@ const Main = (props) => {
           />
         </main> :
         <main>
-          <div></div>
+          <div id="scandit-barcode-result" className="result-text"></div>
           <div className='search'>
             <input placeholder='Search by Stock #, Serial # or Model' type='text' />
             <h2><span>Or</span></h2>
