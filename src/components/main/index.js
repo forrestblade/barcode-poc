@@ -7,11 +7,13 @@ const Main = (props) => {
 
   const [scan, showScan] = useState(false)
 
-  function scanBarcode(code) {
+  function scanBarcode(code ={}) {
     showScan(!scan)
-    if (code.symbology === 'pdf417') {
-      alert('test')
-    }
+    code.barcodes && code.barcodes.map(barcode => {
+      if (barcode.symbology === 'pdf417') {
+        document.getElementById("scandit-barcode-result").innerHTML = Barcode.Symbology.toHumanizedName(barcode.symbology) + ": " + JSON.stringify(barcode) + "<br>";
+      }
+    })
   }
   return (
     <React.Fragment>
@@ -22,17 +24,13 @@ const Main = (props) => {
             vibrateOnScan={true}
             scanSettings={
               new ScanSettings({
-                enabledSymbologies: ["qr", "ean8", "ean13", "upca", "upce", "code39", "code93", "itf", "pdf417"],
+                enabledSymbologies: ["qr", "ean8", "ean13", "upca", "upce", "code128", "code39", "code93", "itf", "pdf417"],
                 codeDuplicateFilter: 1000
               })
             }
             onScan={scanResult => {
-              scanBarcode(scanResult.barcode)
-              document.getElementById("scandit-barcode-result").innerHTML = scanResult.barcodes.reduce(function (string,barcode) {
-                console.log(barcode, 'barcode')
-                return string + Barcode.Symbology.toHumanizedName(barcode.symbology) + ": " + barcode.data + "<br>";
-              },
-                "");
+              scanBarcode(scanResult)
+              
             }}
             onError={error => {
               console.error(error.message);
