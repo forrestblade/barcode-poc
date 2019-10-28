@@ -13,7 +13,7 @@ const Main = (props) => {
       if (barcode.symbology === 'pdf417') {
         const data = barcode.data.split('\n')
         const firstName = data[2].split('').shift().shift().shift().join('')
-        document.getElementById("scandit-barcode-result").innerHTML = firstName;
+        document.getElementById("scandit-barcode-result").innerHTML = data[2] + ' ' + data[4];
       }
     })
   }
