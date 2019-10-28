@@ -19,7 +19,7 @@ const Main = (props) => {
             vibrateOnScan={true}
             scanSettings={
               new ScanSettings({
-                enabledSymbologies: ["qr", "ean8", "ean13", "upca", "upce", "code128", "code39", "code93", "itf", "pdf417"],
+                enabledSymbologies: ["qr", "ean8", "ean13", "upca", "upce", "code39", "code93", "itf", "pdf417"],
                 codeDuplicateFilter: 1000
               })
             }
@@ -30,7 +30,7 @@ const Main = (props) => {
               scanResult.barcodes.reduce(function (string,barcode) {
                 console.log(string, 'string')
                 console.log(barcode, 'barcode')
-                return string + Barcode.Symbology.toHumanizedName(barcode.symbology) + ": " + barcode.data + "<br>";
+                return string + Barcode.Symbology.toHumanizedName(barcode.symbology) + ": " + barcode + "<br>";
               },
                 "");
             }}
