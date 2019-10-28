@@ -12,7 +12,7 @@ const Main = (props) => {
   return (
     <React.Fragment>
       {scan ?
-        <React.Fragment>
+        <main>
           <div id="scandit-barcode-result" className="result-text"></div>
           <BarcodePicker
             playSoundOnScan={true}
@@ -36,7 +36,7 @@ const Main = (props) => {
               console.error(error.message);
             }}
           />
-        </React.Fragment> :
+        </main> :
         <main>
           <div></div>
           <div className='search'>
