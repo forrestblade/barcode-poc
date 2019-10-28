@@ -28,9 +28,8 @@ const Main = (props) => {
               fetchEquipment()
               document.getElementById("scandit-barcode-result").innerHTML = 
               scanResult.barcodes.reduce(function (string,barcode) {
-                console.log(string, 'string')
                 console.log(barcode, 'barcode')
-                return string + Barcode.Symbology.toHumanizedName(barcode.symbology) + ": " + barcode + "<br>";
+                return string + Barcode.Symbology.toHumanizedName(barcode.symbology) + ": " + barcode.data + "<br>";
               },
                 "");
             }}
