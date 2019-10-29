@@ -47,11 +47,11 @@ const Main = (props) => {
         <main>
           <div id="scandit-barcode-result" className="result-text"></div>
           <div className='search'>
-            <input label='Search by Stock number, Serial number or Model' placeholder='Search by Stock #, Serial # or Model' type='text' />
+            <input aria-label='Search by Stock number, Serial number or Model' label='Search by Stock number, Serial number or Model' placeholder='Search by Stock #, Serial # or Model' type='text' />
             <h2><span>Or</span></h2>
-            <button className='scan-serial'>Scan Serial or Stock</button>
+            <button aria-label='Scan serial or stock' className='scan-serial'>Scan Serial or Stock</button>
             <h2><span>Or</span></h2>
-            <button onClick={() => scanBarcode()} className='scan-code'>Scan Barcode</button>
+            <button aria-label='Scan barcode' onClick={() => scanBarcode()} className='scan-code'>Scan Barcode</button>
           </div>
         </main>
       }
