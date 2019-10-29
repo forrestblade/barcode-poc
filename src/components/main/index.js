@@ -47,7 +47,7 @@ const Main = (props) => {
         <main>
           <div id="scandit-barcode-result" className="result-text"></div>
           <div className='search'>
-            <input placeholder='Search by Stock #, Serial # or Model' type='text' />
+            <input label='Search by Stock number, Serial number or Model' placeholder='Search by Stock #, Serial # or Model' type='text' />
             <h2><span>Or</span></h2>
             <button className='scan-serial'>Scan Serial or Stock</button>
             <h2><span>Or</span></h2>
